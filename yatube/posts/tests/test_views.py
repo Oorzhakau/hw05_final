@@ -307,7 +307,7 @@ class PostsPagesTests(TestCase):
     def test_follow_authorized_client(self):
         """
         Авторизованный пользователь может подписываться на других
-        пользователей и удалять их из подписок.
+        пользователей.
         """
         self.authorized_client.get(
             reverse(
@@ -319,6 +319,11 @@ class PostsPagesTests(TestCase):
             author=PostsPagesTests.another_user
         )
         self.assertIsNotNone(follow)
+
+    def test_unfollow_authorized_client(self):
+        """
+        Авторизованный пользователь может отписываться от автора.
+        """
         self.authorized_client.get(
             reverse(
                 'posts:profile_unfollow',

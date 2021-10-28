@@ -133,5 +133,5 @@ class PostURLTests(TestCase):
         )
         self.assertRedirects(
             response,
-            f'/auth/login/?next=/posts/{Post.objects.first().id}/comment'
+            f'/auth/login/?next=/posts/{Post.objects.first().id}/comment/'
         )

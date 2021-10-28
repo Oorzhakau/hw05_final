@@ -14,6 +14,10 @@ class Group(models.Model):
     slug = models.SlugField(unique=True)
     description = models.TextField()
 
+    class Meta:
+        verbose_name = 'Группа'
+        verbose_name_plural = 'Группы'
+
     def __str__(self):
         return self.title
 
@@ -101,6 +105,16 @@ class Follow(CreatedModel):
         verbose_name='Автор',
         related_name='following'
     )
+
+    class Meta:
+        ordering = ["-created"]
+        verbose_name = 'Подписка'
+        verbose_name_plural = 'Подписки'
+        constraints = [
+            models.UniqueConstraint(
+                fields=['user', 'author'],
+                name='unique_following'),
+        ]
 
     def __str__(self):
         return f"{self.user} follows {self.author}"
