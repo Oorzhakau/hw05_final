@@ -140,7 +140,7 @@ def add_comment(request, post_id):
 def follow_index(request):
     template = 'posts/follow.html'
     post_list = Post.objects.filter(
-        author__in=request.user.follower.values_list('author', flat=True))
+        author__following__user=request.user)
 
     paginator = Paginator(post_list, settings.POST_COUNT)
     page_number = request.GET.get("page")
