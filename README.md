@@ -24,7 +24,7 @@ python3 manage.py createsuperuser
 ```
 python3 manage.py runserver
 ```
-## Список исполнителей:
+### Список исполнителей
 
 [Александр Ооржак](https://github.com/Oorzhakau)
 
