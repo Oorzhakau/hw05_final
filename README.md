@@ -24,6 +24,7 @@ python3 manage.py createsuperuser
 ```
 python3 manage.py runserver
 ```
-### Автор: 
-Ооржак Александр Юрьевич
+## Список исполнителей:
+
+[Александр Ооржак](https://github.com/Oorzhakau)
 
